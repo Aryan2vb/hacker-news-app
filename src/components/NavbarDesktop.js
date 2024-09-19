@@ -53,25 +53,29 @@ const NavbarDesktop = () => {
   };
 
   return (
-    <NavbarContainer>
-      <Logo src= "y-comb.png" alt="Y Combinator Logo" />
+      <NavbarContainer>
 
-      <Banner><a href='/' className='text-orange-500'>Hacker News</a></Banner>
-      <NavSection>
-        <NavItem><a href="/">Home <FontAwesomeIcon icon={faArrowTrendUp} /></a></NavItem>
-        <NavItem><a href="/newest">Newest</a></NavItem>
-        <form onSubmit={handleSubmit}>
-          <SearchInput
-            type="text"
-            placeholder="Search..."
-            value={search}
-            onChange={handleChange}
-          />
-        </form>
-        <FontAwesomeIcon icon={faBell} />
-        <NavItem><a href="/login">Login <FontAwesomeIcon icon={faRightToBracket} /></a></NavItem>
-      </NavSection>
-    </NavbarContainer>
+        <a href="https://www.ycombinator.com/" target="_blank">
+            <Logo src="y-comb.png" alt="Y Combinator Logo"/>
+        </a>
+
+
+        <Banner><a href='/' className='text-orange-500'>Hacker News</a></Banner>
+        <NavSection>
+          <NavItem><a href="/">Home <FontAwesomeIcon icon={faArrowTrendUp}/></a></NavItem>
+          <NavItem><a href="/newest">Newest</a></NavItem>
+          <form onSubmit={handleSubmit}>
+            <SearchInput
+                type="text"
+                placeholder="Search..."
+                value={search}
+                onChange={handleChange}
+            />
+          </form>
+          <FontAwesomeIcon icon={faBell}/>
+          <NavItem><a href="/login">Login <FontAwesomeIcon icon={faRightToBracket}/></a></NavItem>
+        </NavSection>
+      </NavbarContainer>
   );
 };
 
