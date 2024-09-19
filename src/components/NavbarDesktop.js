@@ -20,8 +20,19 @@ const Banner = styled.div`
   font-weight: bold;
 `;
 const Logo = styled.img`
-  width: 130px; // Adjust size as needed
-  margin-right: 10px; // Adds space between the image and the text
+  flex: 1;
+  width: 10vw; /* Default size as 10% of the viewport width */
+  max-width: 130px; /* Maximum width for larger screens */
+  min-width: 60px; /* Minimum width for smaller screens */
+  margin-right: 10px; /* Adds space between the image and the text */
+
+  @media (max-width: 768px) {
+    width: 15vw; /* Adjust size for tablets, 15% of viewport width */
+  }
+
+  @media (max-width: 480px) {
+    width: 20vw; /* Adjust size for mobile, 20% of viewport width */
+  }
 `;
 const NavSection = styled.div`
   display: flex;
