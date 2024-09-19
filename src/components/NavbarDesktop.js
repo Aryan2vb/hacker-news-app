@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRightToBracket,faArrowTrendUp,faBell } from '@fortawesome/free-solid-svg-icons';
 const NavbarContainer = styled.div`
   position: sticky;
   top: 0;
@@ -18,7 +19,10 @@ const Banner = styled.div`
   text-align: left;
   font-weight: bold;
 `;
-
+const Logo = styled.img`
+  width: 130px; // Adjust size as needed
+  margin-right: 10px; // Adds space between the image and the text
+`;
 const NavSection = styled.div`
   display: flex;
   flex: 2;
@@ -50,9 +54,11 @@ const NavbarDesktop = () => {
 
   return (
     <NavbarContainer>
+      <Logo src= "y-comb.png" alt="Y Combinator Logo" />
+
       <Banner><a href='/' className='text-orange-500'>Hacker News</a></Banner>
       <NavSection>
-        <NavItem><a href="/">Home</a></NavItem>
+        <NavItem><a href="/">Home <FontAwesomeIcon icon={faArrowTrendUp} /></a></NavItem>
         <NavItem><a href="/newest">Newest</a></NavItem>
         <form onSubmit={handleSubmit}>
           <SearchInput
@@ -62,7 +68,8 @@ const NavbarDesktop = () => {
             onChange={handleChange}
           />
         </form>
-        <NavItem><a href="/login">Login</a></NavItem>
+        <FontAwesomeIcon icon={faBell} />
+        <NavItem><a href="/login">Login <FontAwesomeIcon icon={faRightToBracket} /></a></NavItem>
       </NavSection>
     </NavbarContainer>
   );
