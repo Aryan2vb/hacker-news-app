@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import NotificationDisplay from "./NotificationDisplay"; // Assuming NotificationDisplay is a component you created for displaying notifications
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightToBracket,faArrowTrendUp,faBell } from '@fortawesome/free-solid-svg-icons';
 const NavbarContainer = styled.div`
@@ -42,6 +44,7 @@ const SearchInput = styled.input`
 
 const NavbarDesktop = () => {
   const [search, setSearch] = useState('');
+  const [showNotification, setShowNotification] = useState(false); // State for notification display
 
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -50,33 +53,49 @@ const NavbarDesktop = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     window.location.replace(`/search?q=${search}`);
+
+
   };
 
-  return (
-      <NavbarContainer>
-
-        <a href="https://www.ycombinator.com/" target="_blank">
-            <Logo src="y-comb.png" alt="Y Combinator Logo"/>
-        </a>
+    const toggleNotification = () => {
+        setShowNotification(!showNotification); // Toggle the notification visibility
+    };
 
 
-        <Banner><a href='/' className='text-orange-500'>Hacker News</a></Banner>
-        <NavSection>
-          <NavItem><a href="/">Home <FontAwesomeIcon icon={faArrowTrendUp}/></a></NavItem>
-          <NavItem><a href="/newest">Newest</a></NavItem>
-          <form onSubmit={handleSubmit}>
-            <SearchInput
-                type="text"
-                placeholder="Search..."
-                value={search}
-                onChange={handleChange}
-            />
-          </form>
-          <FontAwesomeIcon icon={faBell}/>
-          <NavItem><a href="/login">Login <FontAwesomeIcon icon={faRightToBracket}/></a></NavItem>
-        </NavSection>
-      </NavbarContainer>
-  );
+    return (
+        <div>
+          <NavbarContainer>
+
+            <a href="https://www.ycombinator.com/" target="_blank">
+                <Logo src="y-comb.png" alt="Y Combinator Logo"/>
+            </a>
+
+
+            <Banner><a href='/' className='text-orange-500'>Hacker News</a></Banner>
+              <NavSection>
+                  <NavItem><a href="/">Home <FontAwesomeIcon icon={faArrowTrendUp}/></a></NavItem>
+                  <NavItem><a href="/newest">Newest</a></NavItem>
+                  <form onSubmit={handleSubmit}>
+                      <SearchInput
+                          type="text"
+                          placeholder="Search..."
+                          value={search}
+                          onChange={handleChange}
+                      />
+                  </form>
+                  <div align="center">
+                      <NavItem>
+                          <FontAwesomeIcon icon={faBell}
+                                           onClick={toggleNotification}/> {/* Click handler for the bell icon */}
+                      </NavItem>
+                  </div>
+                  <NavItem><a href="/login">Login <FontAwesomeIcon icon={faRightToBracket}/></a></NavItem>
+              </NavSection>
+          </NavbarContainer>
+        {showNotification && <NotificationDisplay />}
+    </div>
+
+);
 };
 
 export default NavbarDesktop
