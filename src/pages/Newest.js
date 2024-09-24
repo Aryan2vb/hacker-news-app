@@ -22,7 +22,7 @@ export default function Newest() {
   return (
     <div>
       <div className='sm:text-[2em] text-[1em] font-bold text-center m-2'>
-        Newest
+
       </div>
       <ol>
         {data.hits.map((post, index) => (

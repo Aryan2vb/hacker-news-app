@@ -109,6 +109,9 @@ function Login() {
         {' '} store any login credentials.
       </p>
     </div>
+      <div className="mt-10 text-center text-2xl  text-gray-1000">
+        Features Coming Soon
+      </div>
   </div>
   )
 }
