@@ -8,7 +8,7 @@ function NotificationDisplay() {
 
     return (
         <div className="fixed top-11 right-0 m-4  bg-opacity-30 backdrop-blur-sm flex justify-center items-start">
-            <div className="bg-gray-300 border-amber-500 p-6 rounded-lg shadow-lg w-80">
+            <div className="bg-white border border-amber-500 p-6 rounded-lg shadow-lg w-80">
                 {/*<h2 className="text-xl font-bold mb-4">Notification</h2>*/}
                 <p className="mb-4">No recent Notifications</p>
                 {/*<button*/}
