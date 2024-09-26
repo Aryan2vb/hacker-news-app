@@ -72,7 +72,7 @@ export default function ArticleListComponent(props) {
       <div className="bg-white  rounded-lg p-4 mb-4">
 
           <div className="flex items-center mb-2">
-              <div className="">{article.id}</div>
+              {/*<div className="">{article.id}</div>*/}
               <a href={`/user/${article.by}`} className="font-bold mr-2">
                   {article.by}
               </a>
