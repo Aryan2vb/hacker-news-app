@@ -27,7 +27,7 @@ export default function NewestPostComponent({article}) {
       <div className="flex items-center justify-between">
         <span className="text-xs text-gray-500">{article.points === 1 ? `${article.points} point` : `${article.points} points`}</span>
         
-        <a href={`/post/${article.objectID}`} className="flex items-center text-xs text-gray-500 hover:text-blue-500">
+        <a href={`/post/${article.objectID}`} className="flex items-center text-xs text-orange-500 hover:underline">
           <RiDiscussFill size={16} className="mr-1" />
           <span>discuss</span>
         </a>

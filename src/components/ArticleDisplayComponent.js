@@ -24,13 +24,14 @@ export default function Article({ article }) {
       </div>
 
       <div className="flex items-center justify-between">
-        <span className="text-xs text-gray-500">{article.score} points</span>
+        <span className="text-xs text-orange-500 ">{article.score} points</span>
         
-        <a className="flex items-center text-xs text-gray-500">
-          <FaComments size={16} className="mr-1" />
+        <a className="flex items-center text-xs text-orange-500 hover:underline">
+          <FaComments size={16} className="mr-1 " />
           <span>{kidsCount} comments</span>
         </a>
       </div>
+
     </div>
   );
 }

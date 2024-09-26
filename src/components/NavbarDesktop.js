@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import NotificationDisplay from "./NotificationDisplay"; // Assuming NotificationDisplay is a component you created for displaying notifications
+import NotificationDisplay from "./NotificationDisplay";
+// import img from '../../public/img.png';
+
+// Assuming NotificationDisplay is a component you created for displaying notifications
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightToBracket,faArrowTrendUp,faBell } from '@fortawesome/free-solid-svg-icons';
@@ -22,8 +25,8 @@ const Banner = styled.div`
   font-weight: bold;
 `;
 const Logo = styled.img`
-  width: 130px; // Adjust size as needed
-  margin-right: 10px; // Adds space between the image and the text
+    width: 50px; // Adjust to a visible size
+    margin-right: 12px;
 `;
 const NavSection = styled.div`
   display: flex;
@@ -66,8 +69,8 @@ const NavbarDesktop = () => {
         <div>
           <NavbarContainer>
 
-            <a href="https://www.ycombinator.com/" target="_blank">
-                <Logo src="y-comb.png" alt="Y Combinator Logo"/>
+            <a href="https://www.ycombinator.com/" >
+                <Logo src="/logo.png" alt="Y Combinator Logo" />
             </a>
 
 
