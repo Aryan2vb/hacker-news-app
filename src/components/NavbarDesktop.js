@@ -13,7 +13,7 @@ const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: rgb(255 247 237);;
   padding: 10px 20px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   z-index: 1000;
